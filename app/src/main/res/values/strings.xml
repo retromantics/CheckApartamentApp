@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Check Apartament</string>
+    <string name="lblLogin">Login</string>
+    <string name="txtUsr">Correo Electronico</string>
+    <string name="txtPass">Contraseña</string>
+    <string name="btnLogin">Ingresar</string>
+</resources>
