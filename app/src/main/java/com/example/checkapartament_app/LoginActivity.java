@@ -3,6 +3,7 @@ package com.example.checkapartament_app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.nfc.FormatException;
 import android.os.Bundle;
 import android.os.Handler;
@@ -13,6 +14,7 @@ import com.example.checkapartament_app.databinding.LoginMainBinding;
 import com.example.checkapartament_app.model.Departamento;
 import com.example.checkapartament_app.model.User;
 import com.example.checkapartament_app.repository.DepartamentoRepository;
+import com.example.checkapartament_app.ui.ListActivity;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.concurrent.ExecutorService;
@@ -58,7 +60,8 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             if(true){
-
+                Intent i = new Intent(getApplicationContext(), ListActivity.class);
+                startActivity(i);
             }
 
 
