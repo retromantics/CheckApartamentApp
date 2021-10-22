@@ -3,6 +3,7 @@ package com.example.checkapartament_app;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.nfc.FormatException;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -50,8 +51,10 @@ public class LoginActivity extends AppCompatActivity {
                 validaIntentos();
             }
 
-            if(estado){
-                Toast.makeText(this, "OK", Toast.LENGTH_LONG).show();
+            if(true){
+                //Toast.makeText(this, "OK", Toast.LENGTH_LONG).show();
+                Intent i = new Intent(getApplicationContext(),SegundoActivity.class);
+                startActivity(i);
             }
 
 
@@ -64,9 +67,5 @@ public class LoginActivity extends AppCompatActivity {
                     "e intente nuevamente", Toast.LENGTH_LONG).show();
             b.btnLogin.setEnabled(false);
         }
-    }
-
-    void validaVacio(){
-
     }
 }

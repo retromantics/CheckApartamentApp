@@ -1,5 +1,6 @@
 package com.example.checkapartament_app.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Departamento {
@@ -8,16 +9,25 @@ public class Departamento {
     private int nroDepartamento;
     private String direccion;
 
-    private List<Terminacion> TerminacionL;
+    private ArrayList<Terminacion> TerminacionL;
 
     public Departamento() {
     }
 
-    public Departamento(String proyecto, int nroDepartamento, String direccion, List<Terminacion> terminacionL) {
+    public Departamento(int id, String proyecto, int nroDepartamento, String direccion, ArrayList<Terminacion> terminacionL) {
+        this.id = id;
         this.proyecto = proyecto;
         this.nroDepartamento = nroDepartamento;
         this.direccion = direccion;
-        TerminacionL = terminacionL;
+        this.TerminacionL = terminacionL;
+    }
+
+    public Departamento(int id, String proyecto, int nroDepartamento, String direccion) {
+        this.id = id;
+        this.proyecto = proyecto;
+        this.nroDepartamento = nroDepartamento;
+        this.direccion = direccion;
+        this.TerminacionL = new ArrayList<Terminacion>();
     }
 
     public int getId() {
@@ -52,11 +62,11 @@ public class Departamento {
         this.direccion = direccion;
     }
 
-    public List<Terminacion> getTerminacionL() {
+    public ArrayList<Terminacion> getTerminacionL() {
         return TerminacionL;
     }
 
-    public void setTerminacionL(List<Terminacion> terminacionL) {
-        TerminacionL = terminacionL;
+    public void setTerminacionL(ArrayList<Terminacion> terminacionL) {
+        this.TerminacionL = terminacionL;
     }
 }
