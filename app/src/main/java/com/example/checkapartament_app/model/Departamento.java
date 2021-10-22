@@ -1,13 +1,24 @@
 package com.example.checkapartament_app.model;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.List;
 
+@Entity(tableName = "departamento_table")
 public class Departamento {
+    @PrimaryKey(autoGenerate = true)
     private int id;
+    @ColumnInfo(name = "proyecto")
     private String proyecto;
+    @ColumnInfo(name = "nro_departamento")
     private int nroDepartamento;
+    @ColumnInfo(name = "direccion")
     private String direccion;
+    @ColumnInfo(name = "terminacionL")
     private List<Terminacion> TerminacionL;
+    @ColumnInfo(name = "estado_gral")
     private int estadoGeneral ;
 
     public Departamento() {
