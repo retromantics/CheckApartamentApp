@@ -5,11 +5,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.nfc.FormatException;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.Toast;
 
 import com.example.checkapartament_app.databinding.LoginMainBinding;
+import com.example.checkapartament_app.model.Departamento;
 import com.example.checkapartament_app.model.User;
+import com.example.checkapartament_app.repository.DepartamentoRepository;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -50,8 +57,8 @@ public class LoginActivity extends AppCompatActivity {
                 validaIntentos();
             }
 
-            if(estado){
-                Toast.makeText(this, "OK", Toast.LENGTH_LONG).show();
+            if(true){
+
             }
 
 

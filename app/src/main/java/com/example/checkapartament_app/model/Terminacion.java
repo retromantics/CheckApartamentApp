@@ -7,27 +7,30 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "terminacion_table")
 public class Terminacion {
     @PrimaryKey(autoGenerate = true)
-    private int id;
+    private int terminacionId;
     @ColumnInfo(name = "nombre")
     private String nombre;
     @ColumnInfo(name = "valor")
     private int valor;
     @ColumnInfo(name = "estado")
     private Boolean estado;
+    @ColumnInfo(name = "dptoId_FK")
+    private int dptoId_FK;
 
 
-    public Terminacion(String nombre, Boolean estado, int valor) {
+    public Terminacion(String nombre, Boolean estado, int valor,int dptoId_FK) {
         this.nombre = nombre;
         this.estado = estado;
         this.valor = valor;
+        this.dptoId_FK=dptoId_FK;
     }
 
     public int getId() {
-        return id;
+        return terminacionId;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.terminacionId = id;
     }
 
     public String getNombre() {
@@ -52,5 +55,13 @@ public class Terminacion {
 
     public void setValor(int valor) {
         this.valor = valor;
+    }
+
+    public int getdptoId_FK() {
+        return dptoId_FK;
+    }
+
+    public void setdptoId_FK(int dptoId_FK) {
+        this.dptoId_FK = dptoId_FK;
     }
 }
