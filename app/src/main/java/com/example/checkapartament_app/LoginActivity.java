@@ -9,8 +9,11 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import com.example.checkapartament_app.databinding.LoginMainBinding;
+import com.example.checkapartament_app.model.Departamento;
 import com.example.checkapartament_app.model.User;
 import com.google.android.material.textfield.TextInputLayout;
+
+import java.util.ArrayList;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -54,6 +57,13 @@ public class LoginActivity extends AppCompatActivity {
             if(true){
                 //Toast.makeText(this, "OK", Toast.LENGTH_LONG).show();
                 Intent i = new Intent(getApplicationContext(),SegundoActivity.class);
+
+                ArrayList<Departamento> listado = llenaDpto();
+                Bundle b = new Bundle();
+                b.putSerializable("lista",listado);
+
+                //Departamentos en duro
+                i.putExtras(b);
                 startActivity(i);
             }
 
@@ -67,5 +77,15 @@ public class LoginActivity extends AppCompatActivity {
                     "e intente nuevamente", Toast.LENGTH_LONG).show();
             b.btnLogin.setEnabled(false);
         }
+    }
+
+    ArrayList<Departamento> llenaDpto(){
+        ArrayList<Departamento> DepL =  new ArrayList<Departamento>();
+
+        DepL.add(new Departamento(1,"Proyecto1",101,"Los Jazmines 1"));
+        DepL.add(new Departamento(2,"Proyecto1",102,"Los Jazmines 1"));
+        DepL.add(new Departamento(3,"Lalaland",12,"Ossa 444"));
+        DepL.add(new Departamento(4,"Lalaland",01,"Ossa 444"));
+        return  DepL;
     }
 }

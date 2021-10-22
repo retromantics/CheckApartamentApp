@@ -1,15 +1,18 @@
 package com.example.checkapartament_app.model;
 
-public class Terminacion {
+import java.io.Serializable;
+
+public class Terminacion implements Serializable {
     private String nombre;
     private int valor;
     private Boolean estado;
 
-    public Terminacion(String nombre, Boolean estado, int valor) {
+    public Terminacion(String nombre, int valor,Boolean estado ){
         this.nombre = nombre;
         this.estado = estado;
         this.valor = valor;
     }
+
 
     public String getNombre() {
         return nombre;

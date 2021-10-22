@@ -29,12 +29,17 @@ public class SegundoActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //Recibo y la tengo q pasar al fragment
+        ArrayList<Departamento> DepL = (ArrayList<Departamento>) getIntent().getSerializableExtra("lista");
+        Bundle b = new Bundle();
+        b.putSerializable("lista",DepL);
+
         binding = ActivitySegundoBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        setSupportActionBar(binding.toolbar);
-
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_segundo);
+        //navController.
+
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 

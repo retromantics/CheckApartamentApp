@@ -27,12 +27,8 @@ public class FirstFragment extends Fragment {
 
         //Mi parte
         //1.Traigo la lista y lleno el array
-        ArrayList<Departamento> DepL =  new ArrayList<Departamento>();//(ArrayList<Departamento>) getIntent().getSerializableExtra("lista");
+        ArrayList<Departamento> DepL = (ArrayList<Departamento>) getArguments().getSerializable("lista");
 
-        DepL.add(new Departamento(1,"Proyecto1",101,"Los Jazmines 1"));
-        DepL.add(new Departamento(2,"Proyecto1",102,"Los Jazmines 1"));
-        DepL.add(new Departamento(3,"Lalaland",12,"Ossa 444"));
-        DepL.add(new Departamento(4,"Lalaland",01,"Ossa 444"));
 
         //2.Creo el adapter y le paso la lsita
         DepartamentoAdapter adapter = new DepartamentoAdapter(DepL);
@@ -43,8 +39,11 @@ public class FirstFragment extends Fragment {
         binding.rvListado.setAdapter(adapter);
 
         adapter.setListener(item->{
+            //recibe la vista y navega hacia el otro fragment mediante la el action
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("item",item);
             NavHostFragment.findNavController(FirstFragment.this)
-                    .navigate(R.id.action_FirstFragment_to_SecondFragment);
+                    .navigate(R.id.action_FirstFragment_to_SecondFragment,bundle);
         });
         return binding.getRoot();
 
