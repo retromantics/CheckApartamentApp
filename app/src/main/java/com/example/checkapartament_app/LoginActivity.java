@@ -17,6 +17,7 @@ import com.example.checkapartament_app.repository.DepartamentoRepository;
 import com.example.checkapartament_app.ui.ListActivity;
 import com.google.android.material.textfield.TextInputLayout;
 
+import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -60,8 +61,27 @@ public class LoginActivity extends AppCompatActivity {
             }
 
             if(true){
-                Intent i = new Intent(getApplicationContext(), ListActivity.class);
-                startActivity(i);
+                ArrayList<Departamento> listado = new ArrayList<>();
+                listado.add(new Departamento("p1",23,"los jazmines 222",1));
+                listado.add( new Departamento("p2",101,"AV ossa 45",3));
+                listado.add( new Departamento("p3",45,"Grecia 1556",2));
+                listado.add( new Departamento("p4",56,"Milan 123",1));
+
+                DepartamentoRepository repo = new DepartamentoRepository(getApplication());
+
+                ExecutorService ex = Executors.newSingleThreadExecutor();
+                Handler h = new Handler(Looper.getMainLooper());
+
+                ex.execute(()->{
+                    for (Departamento d: listado) {
+                        repo.add(d);
+                    }
+                    h.post(()->{
+                        Intent i = new Intent(getApplicationContext(), ListActivity.class);
+                        startActivity(i);
+
+                    });
+                });
             }
 
 
@@ -74,5 +94,28 @@ public class LoginActivity extends AppCompatActivity {
                     "e intente nuevamente", Toast.LENGTH_LONG).show();
             b.btnLogin.setEnabled(false);
         }
+    }
+
+    void inserta(){
+        ArrayList<Departamento> listado = new ArrayList<>();
+        listado.add(new Departamento("p1",23,"los jazmines 222",1));
+        listado.add( new Departamento("p2",101,"AV ossa 45",3));
+        listado.add( new Departamento("p3",45,"Grecia 1556",2));
+        listado.add( new Departamento("p4",56,"Milan 123",1));
+
+        DepartamentoRepository repo = new DepartamentoRepository(getApplication());
+
+        ExecutorService ex = Executors.newSingleThreadExecutor();
+        Handler h = new Handler(Looper.getMainLooper());
+
+        ex.execute(()->{
+            for (Departamento d: listado) {
+                repo.add(d);
+            }
+            h.post(()->{
+
+            });
+        });
+
     }
 }

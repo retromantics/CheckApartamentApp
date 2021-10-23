@@ -18,8 +18,10 @@ public class Departamento {
     private int nroDepartamento;
     @ColumnInfo(name = "direccion")
     private String direccion;
-    @ColumnInfo(name = "terminacionL")
-    private ArrayList<Terminacion> TerminacionL;
+//    @ColumnInfo(name = "terminacionL")
+//    private ArrayList<Terminacion> TerminacionL;
+    //@ColumnInfo(name = "terminacionL")
+    //private ArrayList<DeptoTerminacion> TerminacionL;
     @ColumnInfo(name = "estado_gral")
     private int estadoGeneral ;
 
@@ -35,12 +37,13 @@ public class Departamento {
 //        this.terminacionesL = terminacionesL;
 //    }
 
-    @Ignore
+
+    //@Ignore
     public Departamento(String proyecto, int nroDepartamento, String direccion, int estadoGeneral) {
         this.proyecto = proyecto;
         this.nroDepartamento = nroDepartamento;
         this.direccion = direccion;
-        TerminacionL = new ArrayList<Terminacion>() ;
+        //TerminacionL = new ArrayList<DeptoTerminacion>() ;
         this.estadoGeneral = estadoGeneral;
     }
 
@@ -50,16 +53,16 @@ public class Departamento {
         this.proyecto = proyecto;
         this.nroDepartamento = nroDepartamento;
         this.direccion = direccion;
-        TerminacionL = new ArrayList<Terminacion>() ;;
+        //TerminacionL = new ArrayList<DeptoTerminacion>() ;;
         this.estadoGeneral = estadoGeneral;
     }
 
-    public int getdptoId() {
+    public int getDptoId() {
         return dptoId;
     }
 
-    public void setdptoId(int id) {
-        this.dptoId = id;
+    public void setDptoId(int dptoId) {
+        this.dptoId = dptoId;
     }
 
     public String getProyecto() {
@@ -86,11 +89,11 @@ public class Departamento {
         this.direccion = direccion;
     }
 
-    public ArrayList<Terminacion> getTerminacionL() {
+   /* public ArrayList<DeptoTerminacion> getTerminacionL() {
         return TerminacionL;
     }
 
-    public void setTerminacionL(ArrayList<Terminacion> terminacionL) {TerminacionL = terminacionL; }
+    public void setTerminacionL(ArrayList<DeptoTerminacion> terminacionL) {TerminacionL = terminacionL; }*/
 
 
     public int getEstadoGeneral() {

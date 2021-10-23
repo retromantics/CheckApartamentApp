@@ -33,6 +33,6 @@ public class DepartamentoRepository {
         return db.DepartamentoDao().search(id);
     }
 
-    public List<DeptoTerminacion> getTerimnaciones(){return db.DepartamentoDao().getTerminaciones();}
+    //public List<DeptoTerminacion> getTerimnaciones(){return db.DepartamentoDao().getTerminaciones();}
 
 }

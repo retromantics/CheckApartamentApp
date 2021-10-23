@@ -25,12 +25,20 @@ public class Terminacion {
         this.dptoId_FK=dptoId_FK;
     }
 
-    public int getId() {
+    public int getTerminacionId() {
         return terminacionId;
     }
 
-    public void setId(int id) {
-        this.terminacionId = id;
+    public void setTerminacionId(int terminacionId) {
+        this.terminacionId = terminacionId;
+    }
+
+    public int getDptoId_FK() {
+        return dptoId_FK;
+    }
+
+    public void setDptoId_FK(int dptoId_FK) {
+        this.dptoId_FK = dptoId_FK;
     }
 
     public String getNombre() {

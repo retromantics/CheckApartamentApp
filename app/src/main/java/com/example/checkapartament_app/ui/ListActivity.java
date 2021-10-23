@@ -3,10 +3,14 @@ package com.example.checkapartament_app.ui;
 import android.os.Bundle;
 
 import com.example.checkapartament_app.databinding.ActivityListBinding;
+import com.example.checkapartament_app.model.Departamento;
+import com.example.checkapartament_app.repository.DepartamentoRepository;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 
 import androidx.navigation.NavController;
@@ -16,6 +20,9 @@ import androidx.navigation.ui.NavigationUI;
 
 
 import com.example.checkapartament_app.R;
+
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class ListActivity extends AppCompatActivity {
 
